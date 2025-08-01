@@ -1,0 +1,23 @@
+{
+  "/api/direct-setup/route": "/api/direct-setup",
+  "/api/db-setup/route": "/api/db-setup",
+  "/api/execute-sql/route": "/api/execute-sql",
+  "/api/fix-storage/route": "/api/fix-storage",
+  "/api/init-db/route": "/api/init-db",
+  "/api/setup-db/route": "/api/setup-db",
+  "/api/verify-storage/route": "/api/verify-storage",
+  "/favicon.ico/route": "/favicon.ico",
+  "/api/upload-image/route": "/api/upload-image",
+  "/_not-found/page": "/_not-found",
+  "/auth/login/page": "/auth/login",
+  "/db-setup/page": "/db-setup",
+  "/page": "/",
+  "/fix-bucket/page": "/fix-bucket",
+  "/setup/page": "/setup",
+  "/test-upload/page": "/test-upload",
+  "/dashboard/cows/[id]/page": "/dashboard/cows/[id]",
+  "/dashboard/page": "/dashboard",
+  "/dashboard/register/page": "/dashboard/register",
+  "/dashboard/logs/page": "/dashboard/logs",
+  "/dashboard/reports/page": "/dashboard/reports"
+}

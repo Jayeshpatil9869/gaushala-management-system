@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "functions": {
+    "/api/upload-image": {
+      "maxDuration": 60
+    }
+  }
+}

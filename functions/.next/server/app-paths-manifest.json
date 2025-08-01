@@ -1,0 +1,23 @@
+{
+  "/api/direct-setup/route": "app/api/direct-setup/route.js",
+  "/api/db-setup/route": "app/api/db-setup/route.js",
+  "/api/execute-sql/route": "app/api/execute-sql/route.js",
+  "/api/fix-storage/route": "app/api/fix-storage/route.js",
+  "/api/init-db/route": "app/api/init-db/route.js",
+  "/api/setup-db/route": "app/api/setup-db/route.js",
+  "/api/verify-storage/route": "app/api/verify-storage/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/upload-image/route": "app/api/upload-image/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/db-setup/page": "app/db-setup/page.js",
+  "/page": "app/page.js",
+  "/fix-bucket/page": "app/fix-bucket/page.js",
+  "/setup/page": "app/setup/page.js",
+  "/test-upload/page": "app/test-upload/page.js",
+  "/dashboard/cows/[id]/page": "app/dashboard/cows/[id]/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/register/page": "app/dashboard/register/page.js",
+  "/dashboard/logs/page": "app/dashboard/logs/page.js",
+  "/dashboard/reports/page": "app/dashboard/reports/page.js"
+}
