@@ -59,9 +59,6 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <Card className="shadow-2xl border-0 bg-white/90 backdrop-blur-sm">
           <CardHeader className="text-center pb-8 pt-8">
-            <div className="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg" style={{background: 'linear-gradient(135deg, #3b5998 0%, #8b9dc3 100%)'}}>
-              <span className="text-2xl text-white">🐄</span>
-            </div>
             <CardTitle className="text-3xl font-bold mb-2" style={{background: 'linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
               Gaushala Management
             </CardTitle>

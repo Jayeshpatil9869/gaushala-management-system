@@ -52,7 +52,7 @@ export default async function LogsPage() {
       
       <Card className="border border-gray-200 shadow-lg">
         <CardHeader className="border-b border-gray-200">
-          <CardTitle>Recent Activities</CardTitle>
+          <CardTitle className='pt-6'>Recent Activities</CardTitle>
         </CardHeader>
         <CardContent>
           {logs && logs.length > 0 ? (

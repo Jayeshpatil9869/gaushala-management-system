@@ -110,7 +110,7 @@ export default function SearchCows() {
               placeholder="Search cows by tracking ID..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 pr-12 h-14 border-2 rounded-xl bg-white/80 backdrop-blur-sm font-medium transition-all duration-200"
+              className="pl-6 pr-6 h-14 border-2 rounded-xl bg-white/80 backdrop-blur-sm font-medium transition-all duration-200"
               style={{
                 borderColor: '#dfe3ee',
                 color: '#000000'

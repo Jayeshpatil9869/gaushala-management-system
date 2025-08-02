@@ -70,9 +70,7 @@ export default async function DashboardPage() {
     <div className="space-y-8">
       <div className="rounded-2xl p-6" style={{background: 'linear-gradient(90deg, #dfe3ee 0%, #f7f7f7 100%)', border: '1px solid #dfe3ee'}}>
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg" style={{background: 'linear-gradient(135deg, #3b5998 0%, #8b9dc3 100%)'}}>
-            <span className="text-white text-xl">🐄</span>
-          </div>
+          
           <div>
             <h1 className="text-3xl font-bold mb-1" style={{background: 'linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Dashboard</h1>
             <p className="font-medium" style={{color: '#3b5998'}}>

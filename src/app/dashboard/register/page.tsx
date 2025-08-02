@@ -142,9 +142,6 @@ export default function RegisterCowPage() {
     <div className="space-y-8">
       <div className="rounded-xl p-4" style={{background: 'linear-gradient(90deg, #dfe3ee 0%, #f7f7f7 100%)', border: '1px solid #dfe3ee'}}>
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-lg flex items-center justify-center shadow-md" style={{background: 'linear-gradient(135deg, #3b5998 0%, #8b9dc3 100%)'}}>
-            <span className="text-white text-lg">🐄</span>
-          </div>
           <div>
             <h1 className="text-2xl font-bold mb-1" style={{background: 'linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Register New Cow</h1>
             <p className="font-medium" style={{color: '#3b5998'}}>Add a new cow to the gaushala management system</p>
@@ -155,14 +152,13 @@ export default function RegisterCowPage() {
       <Card className="border-0 shadow-2xl bg-white/90 backdrop-blur-sm">
         <CardHeader className="border-b" style={{borderColor: '#dfe3ee', background: 'linear-gradient(90deg, #dfe3ee 0%, #f7f7f7 100%)'}}>
           <CardTitle className="text-2xl font-bold flex items-center space-x-2" style={{background: 'linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-            <span>🐄</span>
-            <span>Cow Details</span>
+            <span className='pt-6'>Cow Details</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="pt-8 px-8 pb-8">
+        <CardContent className="pt-2 px-6 pb-8">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
                 <FormField
                   control={form.control}
                   name="tracking_id"
@@ -348,7 +344,7 @@ export default function RegisterCowPage() {
                           {...field}
                           type="datetime-local"
                           style={{borderColor: '#dfe3ee'}} 
-                          className="focus-visible:ring-2 focus-visible:ring-offset-2" 
+                          className="focus-visible:ring-2 focus-visible:ring-offset-2 " 
                           onFocus={(e) => e.target.style.boxShadow = '0 0 0 2px #3b5998'}
                           value={field.value || ''}
                         />
@@ -378,7 +374,7 @@ export default function RegisterCowPage() {
                           placeholder="Additional information about the cow"
                           rows={4}
                           style={{borderColor: '#dfe3ee'}} 
-                          className="focus-visible:ring-2 focus-visible:ring-offset-2" 
+                          className="focus-visible:ring-2 focus-visible:ring-offset-2 placeholder:text-[#8b9dc3]" 
                           onFocus={(e) => e.target.style.boxShadow = '0 0 0 2px #3b5998'}
                           value={field.value || ''}
                         />

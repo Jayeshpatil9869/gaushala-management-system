@@ -41,9 +41,6 @@ export default function ClientLayout({
       {/* Top header for mobile */}
       <header className="lg:hidden bg-white/80 backdrop-blur-md shadow-lg p-4" style={{borderBottom: '1px solid #dfe3ee'}}>
         <Link href="/dashboard" className="flex items-center space-x-3">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{background: 'linear-gradient(135deg, #3b5998 0%, #8b9dc3 100%)'}}>
-            <span className="text-white text-sm">🐄</span>
-          </div>
           <h2 className="text-xl font-bold" style={{background: 'linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Gaushala</h2>
         </Link>
       </header>
@@ -53,9 +50,6 @@ export default function ClientLayout({
         <aside className="hidden lg:flex w-72 bg-white/90 backdrop-blur-md shadow-2xl flex-col" style={{borderRight: '1px solid #dfe3ee'}}>
           <div className="p-6" style={{borderBottom: '1px solid #dfe3ee'}}>
             <Link href="/dashboard" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200" style={{background: 'linear-gradient(135deg, #3b5998 0%, #8b9dc3 100%)'}}>
-                <span className="text-white text-lg">🐄</span>
-              </div>
               <h2 className="text-2xl font-bold" style={{background: 'linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Gaushala</h2>
             </Link>
           </div>
@@ -109,9 +103,9 @@ export default function ClientLayout({
         </aside>
 
         {/* Main content */}
-        <div className="flex-1 flex flex-col overflow-auto">
+        <div className="flex-1 flex flex-col overflow-auto pb-10">
           <main className="flex-1 pb-4">
-            <div className="bg-white/80 backdrop-blur-sm p-4 md:p-6 shadow-xl" style={{border: '1px solid #dfe3ee'}}>
+            <div className="bg-white/80 backdrop-blur-sm p-4 md:p-6 " style={{border: '1px solid #dfe3ee'}}>
               {children}
             </div>
           </main>
@@ -124,7 +118,7 @@ export default function ClientLayout({
           <Link 
             key={item.href}
             href={item.href} 
-            className="flex flex-col items-center py-2 px-1 rounded-xl transition-all duration-200"
+            className="flex flex-col items-center py-1 px-3 rounded-sm transition-all duration-200"
             style={isActive(item.href) 
               ? {color: '#3b5998', backgroundColor: '#dfe3ee', transform: 'scale(1.1)'}
               : {color: '#666666'}}

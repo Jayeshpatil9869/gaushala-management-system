@@ -70,7 +70,7 @@ export default function RecentCows() {
 
   return (
     <>
-      <Card className="shadow-lg bg-white/80 backdrop-blur-sm overflow-hidden" style={{border: '1px solid #dfe3ee'}}>
+      <Card className="shadow-lg bg-white/80 backdrop-blur-sm overflow-hidden pt-6" style={{border: '1px solid #dfe3ee'}}>
         <CardHeader className="border-b" style={{borderColor: '#dfe3ee'}}>
           <CardTitle style={{color: '#3b5998'}}>Recent Cows</CardTitle>
           <p className="text-sm" style={{color: '#3b5998'}}>
@@ -83,14 +83,14 @@ export default function RecentCows() {
               <p style={{color: '#3b5998'}}>Loading...</p>
             </div>
           ) : cows && cows.length > 0 ? (
-            <div className="overflow-hidden rounded-md" style={{border: '1px solid #dfe3ee'}}>
+            <div className="overflow-hidden" style={{border: '1px solid #dfe3ee'}}>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-left" style={{backgroundColor: '#dfe3ee'}}>
                       <th className="p-3 font-medium" style={{color: '#3b5998'}}>Sr. No.</th>
                       <th className="p-3 font-medium" style={{color: '#3b5998'}}>Health Status</th>
-                      <th className="p-3 font-medium" style={{color: '#3b5998'}}>Source</th>
+                      <th className="p-4 font-medium" style={{color: '#3b5998'}}>Source</th>
                       <th className="p-3 font-medium" style={{color: '#3b5998'}}>Adopter Name</th>
                       <th className="p-3 font-medium" style={{color: '#3b5998'}}>Created At</th>
                     </tr>
@@ -104,10 +104,10 @@ export default function RecentCows() {
                         onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent'}
                         onClick={() => handleCowClick(cow)}
                       >
-                        <td className="p-3 whitespace-nowrap font-medium">
+                        <td className="pl-6 whitespace-nowrap font-medium">
                           {index + 1}
                         </td>
-                        <td className="p-3 whitespace-nowrap">
+                        <td className="p-5 whitespace-nowrap">
                           <Badge style={getHealthStatusColor(cow.health_status)}>
                             {cow.health_status.replace(/_/g, ' ')}
                           </Badge>
