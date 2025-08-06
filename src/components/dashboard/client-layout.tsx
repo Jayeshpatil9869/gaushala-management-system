@@ -97,23 +97,42 @@ export default function ClientLayout({
               </Link>
             ))}
           </nav>
-          <div className="p-4 mt-auto" style={{borderTop: '1px solid #dfe3ee'}}>
-            <button 
-              onClick={handleLogout}
-              className="group flex items-center w-full px-4 py-3 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md"
-              style={{color: '#000000'}}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = '#fee2e2';
-                (e.currentTarget as HTMLElement).style.color = '#dc2626';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
-                (e.currentTarget as HTMLElement).style.color = '#000000';
-              }}
-            >
-              <LogOut className="w-5 h-5 mr-4 transition-colors duration-200" style={{color: '#666666'}} />
-              <span className="font-medium">Logout</span>
-            </button>
+          <div className="mt-auto">
+            <div className="p-4" style={{borderTop: '1px solid #dfe3ee'}}>
+              <button 
+                onClick={handleLogout}
+                className="group flex items-center w-full px-4 py-3 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md"
+                style={{color: '#000000'}}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = '#fee2e2';
+                  (e.currentTarget as HTMLElement).style.color = '#dc2626';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
+                  (e.currentTarget as HTMLElement).style.color = '#000000';
+                }}
+              >
+                <LogOut className="w-5 h-5 mr-4 transition-colors duration-200" style={{color: '#666666'}} />
+                <span className="font-medium">Logout</span>
+              </button>
+            </div>
+            
+            {/* Footer */}
+            <div className="text-center p-4 border-t" style={{borderTop: '1px solid #dfe3ee'}}>
+              <p className="text-xs text-gray-500">
+                Made in India With ♥ by{" "}
+                <a
+                  href="https://digimirai.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-gray-600 underline transition-colors hover:text-gray-800"
+                >
+                  DigiMirai
+                </a>
+                <br />
+                CopyRight &#169; 2025
+              </p>
+            </div>
           </div>
         </aside>
 
@@ -173,6 +192,8 @@ export default function ClientLayout({
           <span className="text-xs mt-1 font-medium">Logout</span>
         </button>
       </nav>
+
+      
     </div>
   );
 
