@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Input } from '@/components/ui/input'
 import { Search, X, Scan } from 'lucide-react'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createBrowserClient } from '@supabase/ssr'
 import { Database } from '@/types/database.types'
 import CowDetailsDialog from './cow-details-dialog'
 import BarcodeScanner from './barcode-scanner'
@@ -18,7 +18,10 @@ export default function SearchCows() {
   const [selectedCow, setSelectedCow] = useState<Cow | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [isScannerOpen, setIsScannerOpen] = useState(false)
-  const supabase = createClientComponentClient<Database>()
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
   const searchRef = useRef<HTMLDivElement>(null)
   const isMobile = useIsMobile()
   const isTabletOrMobile = useIsTabletOrMobile()

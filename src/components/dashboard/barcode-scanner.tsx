@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button'
 import { Loader2, X, Camera, AlertTriangle } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createBrowserClient } from '@supabase/ssr'
 import { Database } from '@/types/database.types'
 import CowDetailsDialog from './cow-details-dialog'
 import { useBarcodeScanner, CameraErrorType } from '@/hooks/use-barcode-scanner'
@@ -24,7 +24,10 @@ export default function BarcodeScanner({ isOpen, onClose }: BarcodeScannerProps)
   const [barcodeReader, setBarcodeReader] = useState<any>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const router = useRouter()
-  const supabase = createClientComponentClient<Database>()
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
   const { toast } = useToast()
   
   // Use our custom barcode scanner hook
