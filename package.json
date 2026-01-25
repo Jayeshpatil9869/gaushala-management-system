@@ -4,11 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 3050",
-    "prebuild": "npm install lightningcss@latest --save-dev --force && npm rebuild lightningcss --update-binary || true",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "npm rebuild lightningcss --update-binary || npm install lightningcss@latest --save-dev --force || true"
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
@@ -47,7 +45,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.3",
+    "eslint-config-next": "^15.0.0",
     "lightningcss": "^1.27.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.4",
