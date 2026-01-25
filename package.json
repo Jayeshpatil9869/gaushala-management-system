@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack -p 3050",
     "build": "next build",
+    "start": "next start",
     "deploy": "opennext build",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npm rebuild lightningcss --update-binary || echo 'lightningcss rebuild skipped'"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
