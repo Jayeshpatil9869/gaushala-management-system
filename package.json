@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack -p 3050",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "npm install lightningcss@latest --save-dev --force && npm rebuild lightningcss --update-binary || true"
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
@@ -53,6 +52,6 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": "20.x"
+    "node": ">=20.0.0 <21.0.0"
   }
 }
