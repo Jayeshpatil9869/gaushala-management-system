@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /
+Disallow: /dashboard
+Disallow: /register
+Disallow: /reports
+Disallow: /logs
+Disallow: /auth
+Disallow: /credits
+Disallow: /setup
+Disallow: /fix-bucket
+Disallow: /api
+Disallow: /_next
+Disallow: /static
+Disallow: /favicon.ico
