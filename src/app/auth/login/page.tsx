@@ -290,6 +290,44 @@ export default function LoginPage() {
                   )}
                 </Button>
               </form>
+
+              {/* Login Credentials Display */}
+              <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl">
+                <div className="flex items-start space-x-2">
+                  <svg 
+                    className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+                    />
+                  </svg>
+                  <div className="flex-1">
+                    <h3 className="text-sm font-bold text-blue-900 mb-2">
+                      Default Login Credentials
+                    </h3>
+                    <div className="space-y-1.5 text-sm">
+                      <div className="flex items-center space-x-2">
+                        <span className="font-semibold text-gray-700 min-w-[70px]">Email:</span>
+                        <code className="px-2 py-1 bg-white rounded border border-blue-200 text-blue-800 font-mono text-xs">
+                          admin@gaushala.com
+                        </code>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <span className="font-semibold text-gray-700 min-w-[70px]">Password:</span>
+                        <code className="px-2 py-1 bg-white rounded border border-blue-200 text-blue-800 font-mono text-xs">
+                          admin@123
+                        </code>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -300,12 +338,12 @@ export default function LoginPage() {
         <p className="text-[2vh] text-gray-500">
           Made in India With ♥ by{" "}
           <a
-            href="https://digimirai.com/"
+            href="https://mahendranagpure.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-gray-600 underline transition-colors"
           >
-            DigiMirai
+            Mahendra Nagpure
           </a>
           <br />
           CopyRight &#169; 2025
