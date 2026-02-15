@@ -42,7 +42,7 @@ export default function LoginPage() {
       // Check if credentials match hardcoded values
       if (trimmedEmail === HARDCODED_EMAIL.toLowerCase() && trimmedPassword === HARDCODED_PASSWORD) {
         console.log("Credentials match, attempting Supabase login...");
-        
+
         // Sign in with Supabase using hardcoded credentials
         const { data, error } = await supabase.auth.signInWithPassword({
           email: HARDCODED_EMAIL,
@@ -52,14 +52,14 @@ export default function LoginPage() {
         if (error) {
           console.error("Supabase login error:", error);
           console.error("Error details:", JSON.stringify(error, null, 2));
-          
+
           // If it's an invalid credentials error, try to reset the password
           if (error.message.includes("Invalid login credentials") || error.message.includes("Invalid login")) {
             console.log("Attempting to reset admin password...");
             try {
               const resetResponse = await fetch("/api/reset-admin-password", { method: "POST" });
               const resetData = await resetResponse.json();
-              
+
               if (resetData.success) {
                 console.log("Password reset successful, retrying login...");
                 // Retry login after password reset
@@ -67,7 +67,7 @@ export default function LoginPage() {
                   email: HARDCODED_EMAIL,
                   password: HARDCODED_PASSWORD,
                 });
-                
+
                 if (retryError) {
                   setError("Invalid email or password. Please check your credentials.");
                 } else if (retryData?.user) {
@@ -93,10 +93,10 @@ export default function LoginPage() {
           }
         } else if (data?.user) {
           console.log("Login successful, user:", data.user.email);
-          
+
           // Wait a moment for session to be set in cookies
           await new Promise((resolve) => setTimeout(resolve, 200));
-          
+
           // Verify session was set
           const { data: sessionData } = await supabase.auth.getSession();
           if (sessionData?.session) {
@@ -187,12 +187,12 @@ export default function LoginPage() {
                       backgroundColor: "#f7f7f7",
                     }}
                     onFocus={(e) =>
-                      ((e.target as HTMLInputElement).style.borderColor =
-                        "#3b5998")
+                    ((e.target as HTMLInputElement).style.borderColor =
+                      "#3b5998")
                     }
                     onBlur={(e) =>
-                      ((e.target as HTMLInputElement).style.borderColor =
-                        "#dfe3ee")
+                    ((e.target as HTMLInputElement).style.borderColor =
+                      "#dfe3ee")
                     }
                     required
                   />
@@ -216,12 +216,12 @@ export default function LoginPage() {
                       backgroundColor: "#f7f7f7",
                     }}
                     onFocus={(e) =>
-                      ((e.target as HTMLInputElement).style.borderColor =
-                        "#3b5998")
+                    ((e.target as HTMLInputElement).style.borderColor =
+                      "#3b5998")
                     }
                     onBlur={(e) =>
-                      ((e.target as HTMLInputElement).style.borderColor =
-                        "#dfe3ee")
+                    ((e.target as HTMLInputElement).style.borderColor =
+                      "#dfe3ee")
                     }
                     required
                   />
@@ -271,12 +271,12 @@ export default function LoginPage() {
                       "linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)",
                   }}
                   onMouseEnter={(e) =>
-                    ((e.target as HTMLButtonElement).style.background =
-                      "linear-gradient(90deg, #2d4373 0%, #7a8bb8 100%)")
+                  ((e.target as HTMLButtonElement).style.background =
+                    "linear-gradient(90deg, #2d4373 0%, #7a8bb8 100%)")
                   }
                   onMouseLeave={(e) =>
-                    ((e.target as HTMLButtonElement).style.background =
-                      "linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)")
+                  ((e.target as HTMLButtonElement).style.background =
+                    "linear-gradient(90deg, #3b5998 0%, #8b9dc3 100%)")
                   }
                   disabled={loading}
                 >
@@ -289,6 +289,44 @@ export default function LoginPage() {
                     "Sign In"
                   )}
                 </Button>
+
+                {/* Login Credentials Display */}
+                <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl">
+                  <div className="flex items-start space-x-2">
+                    <svg
+                      className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <div className="flex-1">
+                      <h3 className="text-sm font-bold text-blue-900 mb-2">
+                        Default Login Credentials
+                      </h3>
+                      <div className="space-y-1.5 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <span className="font-semibold text-gray-700 min-w-[70px]">Email:</span>
+                          <code className="px-2 py-1 bg-white rounded border border-blue-200 text-blue-800 font-mono text-xs">
+                            admin@gaushala.com
+                          </code>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="font-semibold text-gray-700 min-w-[70px]">Password:</span>
+                          <code className="px-2 py-1 bg-white rounded border border-blue-200 text-blue-800 font-mono text-xs">
+                            admin@123
+                          </code>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </form>
             </CardContent>
           </Card>
@@ -296,16 +334,16 @@ export default function LoginPage() {
       </div>
 
       {/* Footer */}
-      <div className="text-center pb-2">
+      <div className="text-center pb-4 mt-6">
         <p className="text-[2vh] text-gray-500">
           Made in India With ♥ by{" "}
           <a
-            href="https://digimirai.com/"
+            href="https://jayeshbpatil.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-gray-600 underline transition-colors"
           >
-            DigiMirai
+            Jayesh Patil
           </a>
           <br />
           CopyRight &#169; 2025
