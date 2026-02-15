@@ -2,6 +2,10 @@
   "name": "gaushala-management",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jayeshpatil9869/gaushala-management-system.git"
+  },
   "scripts": {
     "dev": "next dev --turbopack -p 3050",
     "build": "next build",
